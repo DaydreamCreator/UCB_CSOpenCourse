@@ -30,3 +30,34 @@ PS:
 
 [ Variable ]
   A name that's bound to a data value is also know as variable.
+  
+[ Function ]
+  A function is a sequence of code that performs a particular task can be easily reused.
+  [arguments] [return value]
+    ps: arguments can be in any expressions
+        function executions would terminate by return statement if exists
+        
+ -------->
+  defining functions in py: 
+  
+    def <name>(<paraments>):    # function signature
+      return <expression>       # function body, can have multiple lines
+ <--------
+ 
+ [ Names and environments ]
+  All python code is evaluated in the context of an environment, which is a sequence of frames.
+ 
+ -- Sample codes:
+ def add(num1, num2):
+    sum = num1 + num2         # Function local frame, child of Global frame
+    return sum
+ result = add(2, 4)           # Global fram
+ 
+  Name lookup rules:
+   How Python looks up names in a user-defined function:
+    1. Look it up in the local frame
+    2. If name isn't in local frame, look it up in the global frame
+    3. If name isn't in either frame, throw a NameError
+   * simplified version
+  
+ 
