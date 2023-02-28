@@ -47,12 +47,19 @@ PS:
  [ Names and environments ]
   All python code is evaluated in the context of an environment, which is a sequence of frames.
  
- -- Sample codes:
+ ----------------------------------------------- Sample codes--------------------------------------------------
+ from operator import add     # must import
+ 
  def add(num1, num2):
     sum = num1 + num2         # Function local frame, child of Global frame
     return sum
  result = add(2, 4)           # Global fram
  
+ >>> f = max
+ >>> f
+<built-in function max>
+
+----------------------------------------------- Sample codes-------------------------------------------------
   Name lookup rules:
    How Python looks up names in a user-defined function:
     1. Look it up in the local frame
