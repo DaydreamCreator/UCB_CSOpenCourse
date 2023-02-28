@@ -1,0 +1,20 @@
+[ Abstraction ]
+
+-> Complexity and Abstraction
+  Programming is easy, so long as your programs are small.
+    - Complexity is our enemy.
+    - Abstraction is the key to conquering complexity.
+
+-> Abstraction:
+  [Detail Removel]: hide unnecessary detail from users
+  E.g., vehicle pedal: right pedal for accelerate, left pedal for decelerate
+        even as underlying technology has changed, this abstraction has not.
+        
+  [Detail Removel]: hide unnecessary detail from other designers
+  that is, Nice to be able to think of a system as a hierarchy of well defined “chunks” with precise functionality.
+          [ Separation of Concerns / SoC ]
+ 
+  [Generalization]: avoid unnecessary repetitive work
+
+  Identifying the right abstraction that you need to solve your problem.
+ 
