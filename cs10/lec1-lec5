@@ -1,4 +1,5 @@
-[ Abstraction ]
+lec01
+ [ Abstraction ]
 
 -> Complexity and Abstraction
   Programming is easy, so long as your programs are small.
@@ -6,15 +7,45 @@
     - Abstraction is the key to conquering complexity.
 
 -> Abstraction:
-  [Detail Removel]: hide unnecessary detail from users
-  E.g., vehicle pedal: right pedal for accelerate, left pedal for decelerate
-        even as underlying technology has changed, this abstraction has not.
-        
-  [Detail Removel]: hide unnecessary detail from other designers
-  that is, Nice to be able to think of a system as a hierarchy of well defined “chunks” with precise functionality.
-          [ Separation of Concerns / SoC ]
+  [Detail Removel]: 
+  - hide unnecessary detail from users
+    E.g., vehicle pedal: right pedal for accelerate, left pedal for decelerate
+        even as underlying technology has changed, this abstraction has not.     
+  - hide unnecessary detail from other designers
+    that is, Nice to be able to think of a system as a hierarchy of well defined “chunks” with precise functionality.
+    [ Separation of Concerns / SoC ]
  
-  [Generalization]: avoid unnecessary repetitive work
+  [Generalization]: 
+  - avoid unnecessary repetitive work
 
   Identifying the right abstraction that you need to solve your problem.
  
+lec02
+ [ Procedure ]
+A sequence of instructions that are packaged into a single unit.
+
+Procedures act as abstraction barriers, and thus:
+  - Allow generalization of code.
+  - Serve as the building blocks of our programs.
+  - Can be composed together to make more magnificent things.
+  - Allow us to break big problems down into smaller ones in a process called [functional decomposition].
+
+ [ Funtion ]
+A procedure that takes 0 or more inputs, returns an output, always returns the same output 
+if given the same inputs, and has no side effects.
+ 
+ [ Domain ]
+ The set of inputs a function accepts.
+ [ Range ]
+ The set of outputs a function returns.
+ [ Conditional ]
+ A conditional is a special control block that expects a predicate.
+  - If the predicate is True, then the stuff inside happens.
+  - If it is false, nothing happens.
+
+ [ Abstraction Barrier / Interface ]
+  - Above the abstraction barrier: 
+      User thinks only about block’s behavior for their application.
+  - Below the abstraction barrier: 
+      Creator ensures that block has the correct behavior, doesn’t care how it is used.
+
