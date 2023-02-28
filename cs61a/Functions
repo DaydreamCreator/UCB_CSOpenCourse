@@ -1,0 +1,32 @@
+[ Values ]
+  Programs manipulate [values].      
+    e.g., 'ahoy'
+    - Each value has a certain [data type].
+      e.g., integers, floats, booleans, strings
+
+[ Expressions(with operators) ]
+  An expression describes a computation and evaluates to a value.
+    e.g., 18+69, 6/23, 2**10, 'a'+'hoy'
+
+[ Call Expressions ]
+  Call expressions use function calls.
+    e.g., pow(2, 10), max(50, 100)
+
+Expressions(with operations) <=> Call Expressions
+(can be expressed equivalently)
+
+PS:
+  pow() is a [built-in] function; it is provided in every Python environment.
+  add(), div(), etc can be imported from the [operator] module in Python STD library.
+
+[ Expression tree ] 
+  When evaluating nested expressions, expressions are evaluated from the subtree to the root (inner->outer)
+
+
+[ Name ]
+  A name can be bound(tied) to a value.
+  One way to bind(tie with) a name is using an [assignment statement].
+    e.g., (name)x = (value)7 (or an expression)
+
+[ Variable ]
+  A name that's bound to a data value is also know as variable.
