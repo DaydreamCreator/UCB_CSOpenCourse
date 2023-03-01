@@ -87,3 +87,4 @@ modulus (mod) %
    * simplified version
   
  
+>>> python3 -m doctest -v isPrime.py   
