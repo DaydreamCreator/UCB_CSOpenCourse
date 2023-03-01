@@ -47,7 +47,7 @@ PS:
  [ Names and environments ]
   All python code is evaluated in the context of an environment, which is a sequence of frames.
  
- ----------------------------------------------- Sample codes--------------------------------------------------
+ ----------------------------------------------- Sample codes Start--------------------------------------------------
  from operator import add     # must import
  
  def add(num1, num2):
@@ -59,7 +59,26 @@ PS:
  >>> f
 <built-in function max>
 
------------------------------------------------ Sample codes-------------------------------------------------
+Type conversion
+>>> print( float(4) )
+>>> 4.0
+>>> print( str(4) + str(2) )
+>>> 42
+>>> print( int("4") + int("2") )
+6
+
+Expressions and Operators
+addition +
+subtraction -
+multiplication *
+division /
+int division //
+exponentiation pow
+modulus (mod) %
+
+
+
+----------------------------------------------- Sample codes End-------------------------------------------------
   Name lookup rules:
    How Python looks up names in a user-defined function:
     1. Look it up in the local frame
