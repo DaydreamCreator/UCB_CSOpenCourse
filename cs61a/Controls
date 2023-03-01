@@ -1,0 +1,17 @@
+[ Conditional Operators ]
+  < less than
+  > greater than
+  == equal to
+  >= greater than or equal to
+  <= less than or equal to
+  != not equal to
+
+[ Logical Operators ]
+  A and B:
+    True if A is True and B is True
+  A or B:
+    True if A is True or B is True
+  not A:
+    True if A is False
+    False if A is True
+
