@@ -1,0 +1,58 @@
+INTRODUCTION
+Java is an [object oriented] language with strict requirements:
+  - Every Java file must contain a class declaration*.
+  - All code lives inside a class*, even helper functions, global constants, etc.
+  - To run a Java program, you typically [define a main method] using ->>> public static void main(String[] args)
+   *  This is not completely true, e.g. we can also declare “interfaces” in .java files that may contain code
+
+Features
+1. [ Statically Typed ]
+  - All variables, parameters, and methods must have a declared type.
+  - That type can never change.
+  - Expressions also have a type, e.g. “larger(5, 10) + 3” has type int.
+  - [Type Prechecked] The compiler checks that all the types in your program are compatible before the program ever runs!
+      e.g. String x = larger(5, 10) + 3 will fail to compile.
+      This is unlike a language like Python, where type checks are performed DURING execution.
+2. [ Compilation and Interpretation Separated ]
+    hello.java ===compiler javac===> hello.class ===interpreter java===> stuff happens
+
+    why make a class file at all?
+     - .class file has been type checked. Distributed code is safer.
+     - .class files are ‘simpler’ for machine to execute. Distributed code is faster.
+     - Minor benefit: Protects your intellectual property. No need to give out source.
+
+Defining and Instantiating Classes
+  Every method (a.k.a. function) is associated with some class.
+  To run a class, we must define a main method.
+    - Not all classes have a main method!
+e.g.
+
+public class Dog {
+    public int weightInPounds;         // [ Instance variable ]. Can have as many of these as you want.
+ 
+    public Dog(int startingWeight) {   // [Constructor] (similar to a method, but not a method). Determines how to instantiate the class.
+        weightInPounds = startingWeight;
+    }
+    
+    // Non-static method, a.k.a. [ Instance Method ]
+    // If the method is going to be invoked by an instance of the class, then it should be non-static. 
+    public void makeNoise() {           // Can’t be run directly, since there is no main method.
+        if (weightInPounds < 10) {
+            System.out.println("yipyipyip!");
+        } else if (weightInPounds < 30) {
+            System.out.println("bark. bark.");
+        } else {
+            System.out.println("woof!");
+  	    }
+    }
+    // Roughly speaking: If the method needs to use “my instance variables”, the method must be non-static.
+}
+
+public class DogLauncher {
+   public static void main(String[] args) {
+      Dog.makeNoise();
+   }
+}
+
+
+
