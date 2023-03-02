@@ -21,6 +21,8 @@ Features
      - .class files are ‘simpler’ for machine to execute. Distributed code is faster.
      - Minor benefit: Protects your intellectual property. No need to give out source.
 
+
+CLASSES IN JAVA
 Defining and Instantiating Classes
   Every method (a.k.a. function) is associated with some class.
   To run a class, we must define a main method.
@@ -50,9 +52,52 @@ public class Dog {
 
 public class DogLauncher {
    public static void main(String[] args) {
-      Dog.makeNoise();
+      Dog hugeDog = new Dog(150);         // new instances(objects) of Dog class
+      hugeDog.size;                       // guaranteed to exist
+      hugeDog.name = "frank";             // syntax error!
+      // Cannot add new instance variables to a Dog. They must ALL obey the blueprint exactly.
    }
 }
+
+// another DogLauncher example
+public class DogLauncher {
+   public static void main(String[] args) { 
+      Dog smallDog;               // Declaration of a Dog variable
+      new Dog(20);                // Instantiation of the Dog class as a Dog Object 
+      smallDog = new Dog(5);      // Instantiation and Assignment -> "Constructed"
+      Dog hugeDog = new Dog(150); // Declaration, Instantiation and Assignment (one step)
+      smallDog.makeNoise();
+      hugeDog.makeNoise();        // The dot notation means that we want to use a member of hugeDog
+                                  // a member of class = a method(function) or a variable
+
+   }
+}
+
+Static vs. Instance Members
+
+[ Static Methods ]
+Key differences between static and non-static (a.k.a. instance) methods:
+  - Static methods are invoked using the class name, e.g. Dog.makeNoise();
+      comments by C: static methods do not rely on the variables of instances but can run independently
+  - Instance methods are invoked using an instance name, e.g. maya.makeNoise();
+  - Static methods can’t access “my” instance variables, because there is no “me”(BUT the class).
+
+Why static method?
+  Some classes are never instantiated. For example, Math.
+    x = Math.round(5.6);
+    Sometimes, classes may have a mix of static and non-static methods
+    
+[ Static Variables(dangerous) ]
+Warning: Strongly recommended to avoid static variables whose values change.
+   - Leads to complicated code: Becomes hard to mentally keep track of which parts of your program 
+   read and write from/to the static variable.
+
+A class may have a mix of static and non-static members.
+  - A variable or method defined in a class is also called a member of that class. 
+  - Static members are accessed using class name, e.g. Dog.binomen.
+  - Non-static members cannot be invoked using class name: NONO to use Dog.makeNoise()
+  - Static methods must access instance variables via a specific instance. 
+
 
 
 
