@@ -1,3 +1,5 @@
+Functions >>>>>>>>>
+
 [ Values ]
   Programs manipulate [values].      
     e.g., 'ahoy'
@@ -21,15 +23,6 @@ PS:
 
 [ Expression tree ] 
   When evaluating nested expressions, expressions are evaluated from the subtree to the root (inner->outer)
-
-
-[ Name ]
-  A name can be bound(tied) to a value.
-  One way to bind(tie with) a name is using an [assignment statement].
-    e.g., (name)x = (value)7 (or an expression)
-
-[ Variable ]
-  A name that's bound to a data value is also know as variable.
   
 [ Function ]
   A function is a sequence of code that performs a particular task can be easily reused.
@@ -37,6 +30,10 @@ PS:
     ps: arguments can be in any expressions
         function executions would terminate by return statement if exists
         
+Pure Function vs Non-Pure Function
+Pure Function: just return values
+Non-Pure Function: have side effects (e.g. have print(''))
+
  -------->
   defining functions in py: 
   
@@ -44,10 +41,33 @@ PS:
       return <expression>       # function body, can have multiple lines
  <--------
  
- [ Names and environments ]
-  All python code is evaluated in the context of an environment, which is a sequence of frames.
+Environment >>>>>>>>>
  
- ----------------------------------------------- Sample codes Start--------------------------------------------------
+[ Name ]
+  A name can be bound(tied) to a value.
+  One way to bind(tie with) a name is using an [assignment statement].
+    e.g., (name)x = (value)7 (or an expression)
+  
+[ Variable ]
+  A name that's bound to a data value is also know as variable.
+ 
+[ Names and environments ]
+  An environment is a sequence of frames.
+  • The global frame alone OR
+  • A local frame, then the global frame
+-> All python code is evaluated in the context of an environment, which is a sequence of frames.
+-> Names Have No Meaning Without Environments.
+-> Every expression is evaluated in the context of an environment.
+
+ Name lookup rules:
+   How Python looks up names in a user-defined function:
+    1. Look it up in the local frame
+    2. If name isn't in local frame, look it up in the global frame
+    3. If name isn't in either frame, throw a NameError
+   * simplified version
+
+ 
+ -------------------------------------------------- Sample codes -------------------------------------------------------
  from operator import add     # must import
  
  def add(num1, num2):
@@ -68,23 +88,12 @@ Type conversion
 6
 
 Expressions and Operators
-addition +
-subtraction -
-multiplication *
-division /
-int division //
-exponentiation pow
-modulus (mod) %
+  addition +
+  subtraction -
+  multiplication *
+  division /
+  int division //
+  exponentiation pow
+  modulus (mod) %
 
-
-
------------------------------------------------ Sample codes End-------------------------------------------------
-  Name lookup rules:
-   How Python looks up names in a user-defined function:
-    1. Look it up in the local frame
-    2. If name isn't in local frame, look it up in the global frame
-    3. If name isn't in either frame, throw a NameError
-   * simplified version
-  
  
->>> python3 -m doctest -v isPrime.py   
