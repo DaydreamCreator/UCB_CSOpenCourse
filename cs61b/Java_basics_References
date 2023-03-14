@@ -1,0 +1,16 @@
+The Golden Rule of Equals (GRoE)
+- Given variables y and x:
+    y = x // copies all the bits from x into y
+
+[ Reference Type ]
+There are 8 primitive types in Java: 
+  - byte, short, int, long, float, double, boolean, char
+
+Everything else, including arrays, is a [ reference type ].
+
+The variable name of a new object is a 64-bit pointer to the address of new object, if not assigned, all zeros with new object as "null".
+
+[ Parameter Passing ]
+Passing parameters obeys the same rule as the GRoE: Simply copy the bits to the new scope.
+( Pass by value )
+
