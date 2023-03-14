@@ -1,0 +1,43 @@
+Example - Prime Factorization
+
+The Fibonacci Sequence
+
+def fib(n):
+  """Compute the nth Fibonacci number, for N >= 1."""
+  pred, curr = 0, 1           # 0th and 1st Fibonacci numbers
+  k = 1                       # curr is the kth Fibonacci number
+  while k < n:
+    pred, curr = curr, pred + curr  # *
+    k = k + 1
+  return curr
+
+*: the evaluating order of multiple assignment is
+    evaluating the value of [ curr ], [ pred + curr ], then assign [ pred = curr ],  [ curr = pred + curr].
+
+False values in Python: False, 0, '', None
+True values in Python: Anything else (True)
+
+[ Logical Operators ]
+To evaluate the expression <left> and <right>:
+  1. Evaluate the subexpression <left>.
+  2. If the result is a false value v, then the expression evaluates to v.
+  3. Otherwise, the expression evaluates to the value of the subexpression <right>.
+To evaluate the expression <left> or <right>:
+  1. Evaluate the subexpression <left>.
+  2. If the result is a true value v, then the expression evaluates to v.
+  3. Otherwise, the expression evaluates to the value of the subexpression <right>.
+
+Summation Example
+def cube(k):
+  return pow(k, 3)
+
+def summation(n, term):
+  """Sum the first n terms of a sequence.
+  >>> summation(5, cube)          #   cube is passed as an argument value
+  225                             #   0 + 1 + 8 + 27 + 64 + 125
+  """
+  total, k = 0, 1
+  while k <= n:
+    total, k = total + term(k), k + 1
+  return total
+  
