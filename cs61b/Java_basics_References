@@ -3,14 +3,50 @@ The Golden Rule of Equals (GRoE)
     y = x // copies all the bits from x into y
 
 [ Reference Type ]
-There are 8 primitive types in Java: 
-  - byte, short, int, long, float, double, boolean, char
+There are 9 types of variables in Java:
+    - 8 primitive types (byte, short, int, long, float, double, boolean, char).
+    - The 9th type is references to Objects (an arrow). References may be null.
+Arrays are also objects, since they are created using "new" keyword.
 
 Everything else, including arrays, is a [ reference type ].
 
 The variable name of a new object is a 64-bit pointer to the address of new object, if not assigned, all zeros with new object as "null".
 
+Examples:
+int[] a;    // declaration, creates a bit box intended only for storing a reference to an int array. No object is instantiated.
+new int[]{0, 1, 2, 95, 4};   // instantiation, instantiates a new Object, in this case is an int array.  Object is anonymous!
+int[] a = new int[]{0, 1, 2, 95, 4};   // Declaration, instantiation, and assignment
+
+
+
 [ Parameter Passing ]
 Passing parameters obeys the same rule as the GRoE: Simply copy the bits to the new scope.
 ( Pass by value )
 
+
+Examples:
+
+public class IntList {
+   public int first; 
+   public IntList rest;                  // pointer to the next IntList
+   public IntList(int f, IntList r) {
+      first = f;
+      rest = r;
+   }
+ 
+   /** Return the size of this IntList. */
+   public int size() {              // get the size in recursive way
+      if (rest == null) {
+         return 1;
+      }
+   	return 1 + this.rest.size();
+   }
+   
+   public static void main(String[] args) {
+		IntList L = new IntList(15, null);
+		L = new IntList(10, L);         
+		L = new IntList(5, L);
+
+		System.out.println(L.size());
+	}
+}
